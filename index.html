@@ -20,9 +20,9 @@
   
       function runMotorSequence(hub) {
         return rxjs.concat(
-          hub.motors.startPower(0, 10, WELL_KNOWN_PORT_MODE_IDS[PortModeName.lpf2MMotor]),
+          hub.motors.startPower(0, 30, WELL_KNOWN_PORT_MODE_IDS[PortModeName.lpf2MMotor]),
           rxjs.timer(1000),
-          hub.motors.startPower(0, -10, WELL_KNOWN_PORT_MODE_IDS[PortModeName.lpf2MMotor]),
+          hub.motors.startPower(0, -30, WELL_KNOWN_PORT_MODE_IDS[PortModeName.lpf2MMotor]),
           rxjs.timer(1000),
           hub.motors.startPower(0, 0, WELL_KNOWN_PORT_MODE_IDS[PortModeName.lpf2MMotor]),
           hub.disconnect()
